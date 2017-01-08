@@ -7,7 +7,7 @@ services:
     applications:
         image: tianon/true
         volumes:
-            - ../:/var/www
+            - ../app:/var/www
 #            - ../sample/:/var/www/sample
 
 ### Workspace Utilities Container ###########################
@@ -16,8 +16,8 @@ services:
         build:
             context: ./workspace
             args:
-                - INSTALL_XDEBUG=false
-                - INSTALL_MONGO=false
+                - INSTALL_XDEBUG=true
+                - INSTALL_MONGO=true
                 - INSTALL_NODE=false
                 - INSTALL_YARN=false
                 - INSTALL_DRUSH=false
@@ -46,9 +46,9 @@ services:
         build:
             context: ./php-fpm
             args:
-                - INSTALL_XDEBUG=false
+                - INSTALL_XDEBUG=true
                 - INSTALL_SOAP=false
-                - INSTALL_MONGO=false
+                - INSTALL_MONGO=true
                 - INSTALL_ZIP_ARCHIVE=false
                 - INSTALL_BCMATH=false
                 - INSTALL_MEMCACHED=false
