@@ -31,6 +31,8 @@ services:
                 - NODE_VERSION=stable
                 - YARN_VERSION=latest
                 - TZ=UTC
+        volumes:
+            - /root/.ssh:/root/.ssh
         volumes_from:
             - applications
         extra_hosts:
